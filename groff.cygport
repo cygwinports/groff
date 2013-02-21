@@ -1,0 +1,17 @@
+NAME="groff"
+VERSION=1.22.2
+RELEASE=1
+CATEGORY="Text"
+SUMMARY="GNU roff formatter"
+DESCRIPTION="GNU troff is a typesetting package which reads plain text mixed
+with formatting commands and produces formatted output."
+HOMEPAGE="http://www.gnu.org/software/groff/"
+SRC_URI="mirror://gnu/groff/groff-${VERSION}.tar.gz"
+
+DIFF_EXCLUDES="Makefile"
+
+ACLOCAL_FLAGS="-I m4"
+
+if cross_compiling; then
+MAKEOPTS+=" GROFFBIN=groff TROFFBIN=troff PDFMOMBIN=pdfmom GROFF_BIN_PATH= PDFMOM_BIN_PATH= "
+fi
